@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.navigationcomponent_androidjetpack.R
 import com.example.navigationcomponent_androidjetpack.databinding.FragmentBBinding
 import com.example.navigationcomponent_androidjetpack.viewmodel.MainViewModel
@@ -38,15 +39,12 @@ class FragmentB : Fragment() {
             findNavController().navigate(FragmentBDirections.actionFragmentBToFragmentD())
         }
 
-
-        mainviewmodel.resultLive.observe(viewLifecycleOwner, Observer {
-
-        })
-
         bindingB.senBtn.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString("key", mainviewmodel.resultLive.value)
-            findNavController().navigate(R.id.fragmentC, bundle)
+
+
+//            val bundle = Bundle()
+//            bundle.putString("myArg", mainviewmodel.resultLive.value)
+            findNavController().navigate(FragmentBDirections.actionFragmentBToFragmentC(mainviewmodel.resultLive.value ?: ""))
         }
     }
 

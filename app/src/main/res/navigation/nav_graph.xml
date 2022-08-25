@@ -35,15 +35,16 @@
             app:exitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/fragmentA"
             app:popUpToInclusive="true" />
-        <argument
-            android:name="key"
-            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/fragmentC"
         android:name="com.example.navigationcomponent_androidjetpack.fragments.FragmentC"
         android:label="fragment_c"
-        tools:layout="@layout/fragment_c" />
+        tools:layout="@layout/fragment_c" >
+        <argument
+            android:name="myArgs"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentD"
         android:name="com.example.navigationcomponent_androidjetpack.fragments.FragmentD"

@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.navigationcomponent_androidjetpack.databinding.FragmentCBinding
 
 
 class FragmentC : Fragment() {
 
     private lateinit var bindingC: FragmentCBinding
+
+    private val args by navArgs<FragmentCArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +26,7 @@ class FragmentC : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bindingC.tvGetData.text = arguments?.getString("key")
+        bindingC.tvGetData.text = args.myArgs
     }
 
 
